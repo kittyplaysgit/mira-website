@@ -16,19 +16,24 @@ npx supabase link --project-ref YOUR_PROJECT_REF   # from your project's dashboa
 Then in the Supabase dashboard → **SQL Editor**, paste and run `schema.sql`
 (creates the `waitlist` table, locked down so only the function can touch it).
 
-### 2. Resend
+### 2. Email provider — Amazon SES (live) or Resend (fallback)
 
-1. Resend dashboard → **Domains** → Add `getmira.gg`.
-2. Resend shows you 3–4 DNS records (DKIM/SPF) → add them in **Porkbun → getmira.gg → DNS**
-   exactly as shown. Wait for Resend to show "Verified" (minutes).
-3. **API Keys** → create one with sending access.
+SES is the active provider (configured 2026-08-01):
+
+1. SES → Identities → verify the `getmira.gg` domain (Easy DKIM → 3 CNAMEs into Porkbun).
+2. IAM user `mira-waitlist-sender` with an inline policy allowing only
+   `ses:SendEmail` / `ses:SendRawEmail`.
+3. Request production access (sandbox can only email verified addresses).
+
+Resend is supported as an automatic fallback if `RESEND_API_KEY` is set and
+SES errors; currently unset.
 
 ### 3. Deploy the function
 
 From the `waitlist-backend/` folder:
 
 ```bash
-npx supabase secrets set RESEND_API_KEY=re_your_key REPLY_TO=kittyplaystwitch@gmail.com TWITCH_URL=https://twitch.tv/YOUR_CHANNEL
+npx supabase secrets set SES_ACCESS_KEY=xxx SES_SECRET_KEY=xxx SES_REGION=us-east-1 REPLY_TO=kittyplaystwitch@gmail.com TWITCH_URL=https://twitch.tv/YOUR_CHANNEL
 npx supabase functions deploy waitlist --no-verify-jwt
 ```
 
