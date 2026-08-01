@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mira — your AI stream companion</title>
-  <meta name="description" content="Your AI stream companion. She chats, she clips, she remembers. A character on your overlay with a real personality, a memory of your community, and a production team's work ethic. Runs on your PC, on your keys." />
+  <title>Mira — AI stream companion &amp; auto clipper for streamers</title>
+  <meta name="description" content="She chats, she clips, she remembers. An AI co-host on your Twitch overlay that auto-clips your VODs and remembers your community. Join the waitlist." />
+  <link rel="canonical" href="https://getmira.gg/" />
   <!-- social cards (add /og.png 1200x630 before launch, then uncomment og:image) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mira — your AI stream companion" />
+  <meta property="og:title" content="Mira — AI stream companion for Twitch streamers" />
   <meta property="og:description" content="She chats, she clips, she remembers. Runs on your PC, on your keys." />
-  <meta property="og:url" content="https://getmira.gg" />
+  <meta property="og:url" content="https://getmira.gg/" />
   <!-- <meta property="og:image" content="https://getmira.gg/og.png" /> -->
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
@@ -18,6 +19,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Outfit:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=2" />
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mira",
+    "url": "https://getmira.gg/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows",
+    "description": "AI stream companion for Twitch and YouTube streamers: a chat co-host with persistent memory, an animated overlay character, and a VOD auto-clipper that finds, cuts, and titles highlights.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free, self-hosted, bring your own API keys." }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does my chat know she's AI?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Always. AI disclosure is a hard rule, not a setting — and honestly, it's the bit. Your chat knowing she's AI is half the fun." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Mira replace me?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Never. She's a sidekick — the co-host who also does the editing. You're the stream." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is she going to spam my chat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. She talks when talked to — @mentions, !commands, and alert thank-yous. The only mode where she chats on her own is autopilot, which you flip on deliberately and which always shows its disclosed badge." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platforms does she work with?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Twitch-first today — chat, alerts, VODs, clips. The multi-platform flag merges YouTube, TikTok, and Kick chat into the same brain, and the Discord bot brings her to your server between streams." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can she clone my voice or likeness?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No likeness cloning in the box. The 'AI You' experiments you may have seen are manual, supervised conversations — not a product feature." }
+      },
+      {
+        "@type": "Question",
+        "name": "What won't she do?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The persona rails are not configurable: she always discloses she's AI, stays out of politics and religion, gives no medical/legal/financial advice, and won't generate art from IP that isn't yours." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does my data live?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On your machine. Your keys, your database, your clips. Nothing routes through us." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a beefy PC?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The VOD clipper wants an NVIDIA GPU for local transcription — the setup wizard detects yours and can disable the clipper if needed. Everything else runs light." }
+      },
+      {
+        "@type": "Question",
+        "name": "What keys do I need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An Anthropic API key (chat runs on Haiku, VOD analysis on Sonnet, autopilot on Opus) and optionally an ElevenLabs key for voice. The honest-costs table on the site is what they'll actually cost you." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the waitlist work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We invite people in small batches so every beta streamer gets real support. You'll get exactly one email when it's your turn — no drip campaign." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
