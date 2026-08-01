@@ -4,6 +4,7 @@
 // Secrets:     npx supabase secrets set RESEND_API_KEY=re_xxx REPLY_TO=you@example.com
 
 import { createClient } from "npm:@supabase/supabase-js@2";
+import { SESv2Client, SendEmailCommand } from "npm:@aws-sdk/client-sesv2@3";
 
 const ALLOWED_ORIGINS = new Set([
   "https://getmira.gg",
@@ -85,6 +86,65 @@ function welcomeHtml(interest: Interest): string {
 </html>`;
 }
 
+const SUBJECT = "you're on the mira waitlist 🐾";
+
+// Provider selection: Amazon SES when SES_ACCESS_KEY/SES_SECRET_KEY are set,
+// otherwise Resend via RESEND_API_KEY. Secrets: npx supabase secrets set ...
+async function sendWelcome(email: string, interest: Interest): Promise<void> {
+  const sesKey = Deno.env.get("SES_ACCESS_KEY");
+  const sesSecret = Deno.env.get("SES_SECRET_KEY");
+
+  if (sesKey && sesSecret) {
+    try {
+      const ses = new SESv2Client({
+        region: Deno.env.get("SES_REGION") ?? "us-east-1",
+        credentials: { accessKeyId: sesKey, secretAccessKey: sesSecret },
+      });
+      await ses.send(new SendEmailCommand({
+        FromEmailAddress: FROM,
+        Destination: { ToAddresses: [email] },
+        ...(REPLY_TO ? { ReplyToAddresses: [REPLY_TO] } : {}),
+        Content: {
+          Simple: {
+            Subject: { Data: SUBJECT, Charset: "UTF-8" },
+            Body: {
+              Text: { Data: welcomeText(interest), Charset: "UTF-8" },
+              Html: { Data: welcomeHtml(interest), Charset: "UTF-8" },
+            },
+          },
+        },
+      }));
+      return;
+    } catch (e) {
+      console.error("ses errored:", e);
+      // fall through to Resend if configured
+    }
+  }
+
+  const resendKey = Deno.env.get("RESEND_API_KEY");
+  if (resendKey) {
+    try {
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: FROM,
+          to: [email],
+          ...(REPLY_TO ? { reply_to: REPLY_TO } : {}),
+          subject: SUBJECT,
+          text: welcomeText(interest),
+          html: welcomeHtml(interest),
+        }),
+      });
+      if (!res.ok) console.error("resend failed:", res.status, await res.text());
+    } catch (e) {
+      console.error("resend errored:", e);
+    }
+  } else if (!sesKey) {
+    console.warn("no email provider configured — signup stored, no welcome email sent");
+  }
+}
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin") ?? "";
   const headers = {
@@ -131,29 +191,8 @@ Deno.serve(async (req) => {
 
   const isNew = (data?.length ?? 0) > 0;
   if (isNew) {
-    const key = Deno.env.get("RESEND_API_KEY");
-    if (key) {
-      // email failure shouldn't fail the signup — it's stored either way
-      try {
-        const res = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-          body: JSON.stringify({
-            from: FROM,
-            to: [email],
-            ...(REPLY_TO ? { reply_to: REPLY_TO } : {}),
-            subject: "you're on the mira waitlist 🐾",
-            text: welcomeText(interest),
-            html: welcomeHtml(interest),
-          }),
-        });
-        if (!res.ok) console.error("resend failed:", res.status, await res.text());
-      } catch (e) {
-        console.error("resend errored:", e);
-      }
-    } else {
-      console.warn("RESEND_API_KEY not set — signup stored, no welcome email sent");
-    }
+    // email failure shouldn't fail the signup — it's stored either way
+    await sendWelcome(email, interest);
   }
 
   return new Response(JSON.stringify({ ok: true, new: isNew }), { status: 200, headers });
