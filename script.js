@@ -286,7 +286,7 @@ document.querySelectorAll("[data-interest]").forEach((link) => {
 // Front-end only for now. LAUNCH BLOCKER: point WAITLIST_ENDPOINT at the real
 // store (Resend audience or Supabase table, per the launch checklist) before
 // any traffic — until then signups only persist in the visitor's localStorage.
-const WAITLIST_ENDPOINT = "";
+const WAITLIST_ENDPOINT = "https://iocrdajipzkytfzuojiy.supabase.co/functions/v1/waitlist";
 if (!WAITLIST_ENDPOINT) {
   console.warn("mira: WAITLIST_ENDPOINT not configured — signups are stored in the visitor's localStorage only.");
 }
