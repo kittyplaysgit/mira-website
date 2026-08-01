@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mira — your AI stream companion</title>
+  <meta name="description" content="Your AI stream companion. She chats, she clips, she remembers. A character on your overlay with a real personality, a memory of your community, and a production team's work ethic. Runs on your PC, on your keys." />
+  <!-- social cards (add /og.png 1200x630 before launch, then uncomment og:image) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mira — your AI stream companion" />
+  <meta property="og:description" content="She chats, she clips, she remembers. Runs on your PC, on your keys." />
+  <meta property="og:url" content="https://getmira.gg" />
+  <!-- <meta property="og:image" content="https://getmira.gg/og.png" /> -->
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Outfit:wght@300..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+  <div class="bg-grad" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="logo" href="#top"><span class="logo-sprite" id="nav-sprite" aria-hidden="true"></span>mira</a>
+      <nav class="nav-links" id="site-nav">
+        <a href="#features">features</a>
+        <a href="#how">how it works</a>
+        <a href="#costs">honest costs</a>
+        <a href="#tiers">tiers</a>
+        <a href="#faq">faq</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#waitlist">join the waitlist</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">beta — she's real, she's running</p>
+          <h1 class="reveal">your AI stream companion.<br /><span class="grad">she chats, she clips,<br />she remembers.</span></h1>
+          <p class="lede reveal">
+            a character on your overlay with a real personality, a memory of your
+            community, and a production team's work ethic. runs on your PC, on your keys.
+          </p>
+
+          <form class="waitlist-form hero-form reveal" id="hero-form" novalidate>
+            <label class="sr-only" for="hero-email">email address</label>
+            <input type="email" id="hero-email" name="email" placeholder="you@yourchannel.tv" required autocomplete="email" aria-describedby="hero-note" />
+            <input type="hidden" name="interest" value="free" />
+            <button class="btn btn-primary burst" type="submit">join the waitlist</button>
+          </form>
+          <p class="form-note reveal" id="hero-note" role="status" aria-live="polite">or type <code class="chat-cmd">!getmira</code> in a chat where she's live 🐾</p>
+        </div>
+
+        <div class="hero-sprite reveal">
+          <div class="mood-ring" id="mood-ring" aria-hidden="true"></div>
+          <div class="sprite-stage" id="hero-sprite-stage" role="img" aria-label="Mira's starter companion sprite, idling"></div>
+          <div class="sprite-bubble" id="sprite-bubble">hi, i'm the starter blob. mira wears me until you make your own.</div>
+        </div>
+      </div>
+
+      <!-- 60-sec demo slot. Swap the placeholder for the real cut from the clip library. -->
+      <div class="container">
+        <div class="demo-frame reveal">
+          <button class="demo-placeholder" id="demo-play">
+            <span class="play-btn" aria-hidden="true">▶</span>
+            <span class="demo-caption">60-sec demo — being cut from real clips. join the waitlist and we'll send it to you first →</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. PROOF ============ -->
+    <section class="section proof">
+      <div class="container">
+        <p class="eyebrow reveal">receipts</p>
+        <h2 class="reveal">she streams most nights.</h2>
+        <p class="lede reveal">not a concept video — mira already runs a real overlay on real streams.</p>
+        <!-- Real clip embeds only (per the no-fake-screenshots rule). One honest slot until the exports land. -->
+        <div class="proof-grid">
+          <div class="proof-slot reveal"><span>real clips are being exported from her library — landing here soon</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. FEATURE GRID ============ -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <p class="eyebrow reveal">what's in the box</p>
+        <h2 class="reveal">on by default.</h2>
+        <p class="lede reveal">this is the product. install her, run /setup, go live.</p>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-icon" data-icon="chat" aria-hidden="true"></div>
+            <h3>chat companion</h3>
+            <p>answers @mentions with a real personality, runs !commands, gives your viewers nicknames. she's in the chat, not above it.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" data-icon="mask" aria-hidden="true"></div>
+            <h3>overlay character</h3>
+            <p>an animated character on your stream — moods, blinks, reactions, emote bursts. bring your own art or start with a starter pack.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" data-icon="heart" aria-hidden="true"></div>
+            <h3>alert thanks + supporter memory</h3>
+            <p>thanks subs, raids, and bits by name — and remembers who they are next stream. your regulars are regulars to her too.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" data-icon="flag" aria-hidden="true"></div>
+            <h3>sub goal</h3>
+            <p>a daily goal bar on the overlay. she hypes the milestones so you don't have to narrate your own goal.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" data-icon="floppy" aria-hidden="true"></div>
+            <h3>persistent memory</h3>
+            <p>remembers what she said and what chat did, across streams. inside jokes survive the offline screen.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" data-icon="scissors" aria-hidden="true"></div>
+            <h3>VOD auto-clipper</h3>
+            <p>every stream auto-mined for highlights: transcribed on your GPU, scored, cut, titled. she watched the whole VOD so nobody has to.</p>
+          </article>
+          <article class="card reveal card-wide">
+            <div class="card-icon" data-icon="books" aria-hidden="true"></div>
+            <h3>clip library + publish pack</h3>
+            <p>a dashboard of ranked clips with titles, tags, and descriptions ready to post. top 5 per VOD, curated.</p>
+          </article>
+        </div>
+
+        <p class="trust-strip reveal">always disclosed AI — that's the bit · sidekick, never a replacement · <a href="#faq">your keys, your machine, your data</a></p>
+
+        <h3 class="pills-title reveal">installed, flip when ready ⚡</h3>
+        <ul class="pills">
+          <li class="pill reveal">autopilot — she runs chat solo, disclosed badge always on</li>
+          <li class="pill reveal">vision — !look, she sees your screen and reacts</li>
+          <li class="pill reveal">instant replay — she replays hype moments on the overlay. runs on OBS's buffer, ~free</li>
+          <li class="pill reveal">messages inbox — viewers leave notes, you reply from your phone</li>
+          <li class="pill reveal">multi-platform chat — YouTube/TikTok/Kick merged into one brain</li>
+          <li class="pill reveal">discord bot — companion presence in your server</li>
+          <li class="pill reveal">fun pack — predictions, points, shop, shower thoughts, mood ring, clip scout</li>
+          <li class="pill reveal">twitch auto-clips — her best moments published as real Twitch clips (needs a quick Twitch OAuth)</li>
+          <li class="pill reveal">voice — she talks out loud (BYO ElevenLabs key)</li>
+        </ul>
+
+        <div class="mission-control reveal">
+          <h3>also in the box: mission control</h3>
+          <p>transcript search + manual clip cutter · vertical 9:16 reframe for Shorts ·
+          clipper-learns-from-your-picks feedback loop · session reports + daily email digest ·
+          favorite-comment scrapbook · idea briefs · live health dots + self-healing supervisor ·
+          /setup 2-minute onboarding · character pack scaffolder</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. HOW IT WORKS ============ -->
+    <section class="section" id="how">
+      <div class="container">
+        <p class="eyebrow reveal">how it works</p>
+        <h2 class="reveal">you → companion → live.</h2>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>you</h3>
+            <p>run /setup on your streaming PC. two minutes: your name, your vibe, your keys. the wizard detects your GPU and wires OBS.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>companion</h3>
+            <p>name her, pick a starter sprite pack or scaffold your own art, do the persona interview. she starts learning your community immediately.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>live</h3>
+            <p>go live. she chats, thanks supporters, tracks the sub goal — and when you end stream, the clipper gets to work on the VOD.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 5. HONEST COSTS ============ -->
+    <section class="section section-alt" id="costs">
+      <div class="container">
+        <p class="eyebrow reveal">honest costs</p>
+        <h2 class="reveal">what she actually costs to run.</h2>
+        <p class="lede reveal">
+          mira is self-hosted: your machine, your API keys, your bill.
+          here's the table — measured, not marketed. 💸
+        </p>
+
+        <div class="table-wrap reveal" tabindex="0" role="region" aria-label="running cost breakdown">
+          <table class="cost-table">
+            <caption class="sr-only">what each Mira feature costs to run, per stream or per month</caption>
+            <thead>
+              <tr><th scope="col">feature</th><th scope="col">cost driver</th><th scope="col">measured / estimated</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>chat companion + fun pack + alerts</td>
+                <td>batched Haiku calls</td>
+                <td><strong>~$0.02–0.10 / stream-hour</strong> (measured: ~$0.02)</td>
+              </tr>
+              <tr>
+                <td>VOD clipper + metadata</td>
+                <td>Sonnet analysis passes over transcript</td>
+                <td><strong>~$1–3 per stream</strong> (transcription free on your GPU)</td>
+              </tr>
+              <tr>
+                <td>discord bot / inbox / translate</td>
+                <td>Haiku per message</td>
+                <td>pennies / month</td>
+              </tr>
+              <tr>
+                <td>vision (!look)</td>
+                <td>image tokens</td>
+                <td>~$0.10–0.30 / stream-hour</td>
+              </tr>
+              <tr>
+                <td>autopilot</td>
+                <td>Opus replies every ~30s</td>
+                <td><strong>~$1–3 / hour while ON</strong> — the one genuinely spicy flag</td>
+              </tr>
+              <tr>
+                <td>voice</td>
+                <td>ElevenLabs plan</td>
+                <td>$0 (text bubbles) / $5/mo Starter / $22/mo Creator</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="models-note reveal">the models under the hood: chat/fun/discord on Haiku 4.5 ($1/$5 per MTok) ·
+        VOD analysis on Sonnet ($3/$15; intro $2/$10 through aug 2026) · autopilot on Opus ($5/$25) ·
+        whisper transcription runs on your GPU: $0.</p>
+
+        <div class="cost-summary reveal">
+          <h3>the realistic monthly picture</h3>
+          <p>3 streams a week × 4 hours ≈ 50 stream-hours, 13 VODs:</p>
+          <ul>
+            <li>chat / companion / fun: <strong>$1–5/mo</strong></li>
+            <li>clipper: <strong>$13–40/mo</strong> (13 VODs × $1–3)</li>
+            <li>voice: <strong>$0–22/mo</strong> (your choice)</li>
+          </ul>
+          <p class="cost-total">realistic total: <strong>~$15–65/mo</strong> in your own API usage.
+          autopilot and vision add on top only while they're switched on.</p>
+        </div>
+
+        <div class="mid-cta reveal">
+          <p>that's the whole bill — no markup, no license fee, ever.</p>
+          <a class="btn btn-primary burst" href="#waitlist">join the waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. TIERS ============ -->
+    <section class="section" id="tiers">
+      <div class="container">
+        <p class="eyebrow reveal">tiers</p>
+        <h2 class="reveal">free is the whole product.</h2>
+
+        <div class="tier-grid">
+          <article class="tier tier-featured reveal">
+            <div class="tier-badge">beta</div>
+            <h3>🐾 mira</h3>
+            <p class="tier-price">$0 <span>forever + your own API usage</span></p>
+            <ul>
+              <li>everything — tier 1 <em>and</em> the power flags</li>
+              <li>self-hosted on your streaming PC</li>
+              <li>your keys, your machine, your data</li>
+              <li>open source at public launch</li>
+              <li>self-hosting will never cost a license fee</li>
+            </ul>
+            <a class="btn btn-primary burst" href="#waitlist" data-interest="free">join the waitlist</a>
+          </article>
+
+          <article class="tier reveal">
+            <h3>done-for-you setup</h3>
+            <p class="tier-price">$149 <span>one-time · launch price<br />$99 beta-friends · $199 rush</span></p>
+            <ul>
+              <li>we design your companion <em>with</em> you</li>
+              <li>character brief → original art pack</li>
+              <li>persona interview + voice pick</li>
+              <li>working install handed over</li>
+              <li>first-stream support</li>
+              <li>capped seats per month — it's a service, not a queue</li>
+            </ul>
+            <a class="btn btn-ghost" href="#waitlist" data-interest="dfy">ask about a seat</a>
+          </article>
+
+          <article class="tier reveal">
+            <h3>mira pro <span class="soon">hosted</span></h3>
+            <p class="tier-price">~$19–29/mo <span>waitlist only</span></p>
+            <ul>
+              <li>for "i don't want to run servers"</li>
+              <li>we run the dashboard, the clipper GPU, and the brains</li>
+              <li>you keep OBS</li>
+              <li>same features — pro sells convenience, not features</li>
+            </ul>
+            <a class="btn btn-ghost" href="#waitlist" data-interest="pro">join the pro waitlist</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. FAQ + TRUST ============ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <p class="eyebrow reveal">faq + trust</p>
+        <h2 class="reveal">the fine print, in large type.</h2>
+
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>does my chat know she's AI?</summary>
+            <p>always. AI disclosure is a hard rule, not a setting — and honestly, it's the bit.
+            your chat knowing she's AI is half the fun.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>does mira replace me?</summary>
+            <p>never. she's a sidekick — the co-host who also does the editing. you're the stream.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>is she going to spam my chat?</summary>
+            <p>no. she talks when talked to — @mentions, !commands, and alert thank-yous.
+            the only mode where she chats on her own is autopilot, which you flip on deliberately
+            and which always shows its disclosed badge.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>which platforms does she work with?</summary>
+            <p>twitch-first today — chat, alerts, VODs, clips. the multi-platform flag merges
+            YouTube, TikTok, and Kick chat into the same brain, and the discord bot brings her
+            to your server between streams.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>can she clone my voice or likeness?</summary>
+            <p>no likeness cloning in the box. the "AI You" experiments you may have seen are
+            manual, supervised conversations — not a product feature.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>what won't she do?</summary>
+            <p>the persona rails are not configurable: she always discloses she's AI, stays out of
+            politics and religion, gives no medical/legal/financial advice, and won't generate
+            art from IP that isn't yours.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>where does my data live?</summary>
+            <p>on your machine. your keys, your database, your clips. nothing routes through us.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>do i need a beefy PC?</summary>
+            <p>the VOD clipper wants an NVIDIA GPU for local transcription — the setup wizard
+            detects yours and can disable the clipper if needed. everything else runs light.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>what keys do i need?</summary>
+            <p>an Anthropic API key (chat runs on Haiku, VOD analysis on Sonnet, autopilot on Opus)
+            and optionally an ElevenLabs key for voice. the honest-costs table above is what
+            they'll actually cost you.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>how does the waitlist work?</summary>
+            <p>we invite people in small batches so every beta streamer gets real support.
+            you'll get exactly one email when it's your turn — no drip campaign.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WAITLIST ============ -->
+    <section class="section waitlist" id="waitlist">
+      <div class="container waitlist-inner">
+        <div class="sprite-stage sprite-small" id="waitlist-sprite" aria-hidden="true"></div>
+        <h2 class="reveal">solo streamer? not anymore.</h2>
+        <p class="lede reveal">the beta is small on purpose — every beta streamer gets real support
+        while we harden her. leave your email and we'll summon you when a spot opens.</p>
+
+        <form class="waitlist-form reveal" id="waitlist-form" novalidate>
+          <label class="sr-only" for="email">email address</label>
+          <input type="email" id="email" name="email" placeholder="you@yourchannel.tv" required autocomplete="email" aria-describedby="form-note" />
+          <input type="hidden" name="interest" value="free" />
+          <button class="btn btn-primary burst" type="submit">summon me</button>
+        </form>
+        <p class="form-note reveal" id="form-note" role="status" aria-live="polite">no spam. one email when it's your turn.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="logo" href="#top"><span class="logo-sprite" id="footer-sprite" aria-hidden="true"></span>mira</a>
+      <p>getmira.gg · your keys, your machine, your data · © 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
